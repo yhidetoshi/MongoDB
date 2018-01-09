@@ -47,3 +47,8 @@ testRep1:SECONDARY> rs.conf()
 	]
 }
 ```
+
+## oplogについて
+
+- oplogを確認する
+`> db.getReplicationInfo()`
