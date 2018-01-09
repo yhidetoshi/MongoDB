@@ -11,17 +11,17 @@
 優先度が高いほうがプライマリとして動作する
 
 - Configをセット
-> cfg = rs.conf()
+`> cfg = rs.conf()`
 
 - 配列の数字は_idを入れる( 0は絶対にPrimaryにならない状態になる)
 - プライオリティを10にセット
-> cfg.members[1].priority = 50
+`> cfg.members[1].priority = 50`
 
 - 設定を反映する
-> rs.reconfig(cfg)
+`> rs.reconfig(cfg)`
 
 - 反映後の設定を確認する
-> rs.conf()
+`> rs.conf()`
 
 ```
 testRep1:SECONDARY> rs.conf()
