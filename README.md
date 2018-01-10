@@ -50,7 +50,7 @@ testRep1:SECONDARY> rs.conf()
 }
 ```
 
-## MongoDBのセカンダリを追加する
+## MongoDBのリングにノードを追加・削除する
 
 - 構成からノードを外すコマンド(MongoDBのプライマリで実行
   - `>rs.remove("<MongoDBのIPアドレス>:27017");`
