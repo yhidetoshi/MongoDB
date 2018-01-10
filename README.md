@@ -8,7 +8,9 @@
 
 ## Primary/Secondaryの重み付け設定をする
 
-優先度が高いほうがプライマリとして動作する
+- Priorityの設定
+  - 0 - 1000 の値で値が高い方が優先してプライマリに昇格する
+  - 優先度が高いほうがプライマリとして動作する
 
 - Configをセット
 `> cfg = rs.conf()`
@@ -47,6 +49,17 @@ testRep1:SECONDARY> rs.conf()
 	]
 }
 ```
+
+## MongoDBのセカンダリを追加する
+
+- 構成からノードを外すコマンド(MongoDBのプライマリで実行
+  - `>rs.remove("<MongoDBのIPアドレス>:27017");`
+- 追加したノードをセカンダリから同期をする場合
+  - `> SECONDARY> rs.syncFrom("<MongoDBのIPアドレス>:27017")`
+
+- 不要になるMongoDBを切り離す
+  - 下記のコマンドはPrimaryで実行する
+  - `$ rs.remove("<MongoDBのIPアドレス>:27017");`
 
 ## oplogについて
 
