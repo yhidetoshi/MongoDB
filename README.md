@@ -65,6 +65,15 @@ testRep1:SECONDARY> rs.conf()
 }
 ```
 
+## スロークエリを削除する
+
+- `> db.currentOp()`
+  - 実行中のクエリを表示する
+- `> db.killOp(opid)`
+  - クエリを削除する
+- `"desc" : "repl writer worker "`
+  - レプリカのためのクエリなので削除してはいけない
+
 ## oplogについて
 (参照)https://goo.gl/T5Wd6y
 ```
